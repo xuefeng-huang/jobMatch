@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>writers</title>
+</head>
+<body>
+    {% csrf_token %}
+    {% if not writer_list %}
+    <h3>no matching writers</h3>
+    
+    {% else %}
+    <ol>
+    {% for writer in writer_list %}
+    <li>{{writer.name}}:{{writer.score}}</li>
+    {% endfor %}
+    </ol>
+    
+    {% endif %}
+</body>
+</html>
