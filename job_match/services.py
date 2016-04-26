@@ -18,7 +18,7 @@ def get_writer_score(writer):
                 for keywords in article_keywords:
                     print keywords[0]
                     items = keywords[0].split() # get the keywords part and split into a list
-                    if any(item in ['travel', 'singapore', 'tourism', 'sightseeing'] for item in items):
+                    if any(item.lower() in ['travel', 'singapore', 'tourism', 'sightseeing'] for item in items):
                         relavent_links += 1
                         break
                 total_links += 1
